@@ -7,21 +7,22 @@
   background: @tree-view-background-color;
   padding-top: 0;
 
-  .project-root.project-root {
+  .project-root {
     &:first-child {
       padding-top: 0;
     }
     &:before {
       height: @tab-height;
-      background-clip: padding-box;
+      background-clip: border-box;
     }
 
     & > .header {
       & .name {
         .text(bold);
         color: @text-color-highlight;
-        height: @tab-height + 1px;
+        height: @tab-height;// + 1px;
         line-height: @tab-height;
+        vertical-align: middle;
 
         &:before {
           display: none;
@@ -39,7 +40,7 @@
       }
     }
   }
-  .project-root.project-root.collapsed {
+  .project-root.collapsed {
     & > .header {
       &:before {
         opacity: 0;
@@ -65,16 +66,47 @@
 
 @media (max-width: 1280px), (max-height: 800px) {
   .tree-view {
-    .project-root.project-root {
+    .project-root {
       &:before {
-        height: @tab-height * 0.8;
+        height: @tab-height; // * 0.8;
       }
       & > .header {
         & .name {
-          height: @tab-height * 0.8 + 1px;
-          line-height: @tab-height * 0.8;
+          height: @tab-height; // * 0.8 + 1px;
+          line-height: @tab-height; // * 0.8;
         }
       }
     }
   }
+}
+
+.add-tree-item-hover{
+    .tree-view{
+        li{
+            &:hover{
+                > span{
+                    font-size:@font-size + 1px;
+                    text-shadow:0 2px 2px darken(@tree-view-background-color,5%);
+                }
+            }
+        }
+    }
+}
+
+.hide-tree-items{
+    .tree-view{
+        &:not(:hover){
+            li{
+                &.collapsed, &.project-root > ol > .file > span{
+                    opacity:0.15;
+                }
+            }
+        }
+    }
+}
+
+.tree-view{
+    li.selected::before{
+        height:34px;
+    }
 }

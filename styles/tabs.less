@@ -18,7 +18,7 @@
   .tab {
     .text(normal);
     text-align: center;
-    color: @text-color-subtle;
+    color: @text-color-highlight;
     background: @tab-background-color;
     display: table-cell;
     width: 100%;
@@ -39,9 +39,9 @@
     .status-ignored {
       transition: color @transition-time ease, background @transition-time ease;
 
-      &:hover {
+      /*&:hover {
         color: @text-color-highlight;
-      }
+      }*/
     }
 
     .status-modified {
@@ -124,7 +124,7 @@
   .tab.modified:not(:hover) .close-icon {
     opacity: 1;
     transform: scale(1);
-    top: 12px;
+    top: 8px;
     right: 8px;
     display: inline-block;
     border-color: @background-color-warning;
@@ -189,11 +189,22 @@
 
 @media (max-width: 1280px), (max-height: 800px) {
   .tab-bar {
-    height: @tab-height * 0.8;
+    height: @tab-height; //* 0.8;
 
     .tab {
-      height: @tab-height * 0.8;
-      line-height: @tab-height * 0.8;
+      height: @tab-height; // * 0.8;
+      line-height: @tab-height; // * 0.8;
     }
   }
+}
+
+.hide-idle-tabs{
+    .tab-bar .tab:not(.active){
+        opacity:0.3;
+        transition: all 0.2s ease-in-out;
+
+        &.modified,&:hover{
+            opacity:1;
+        }
+    }
 }

@@ -1,15 +1,19 @@
 {
-  "name": "immersive-nucleus-dark-ui",
+  "name": "geneus-ui",
   "theme": "ui",
-  "version": "0.2.0",
-  "description": "An immersive adaptable UI with your favorite syntax theme at its core!",
+  "version": "0.1.0",
+  "description": "A cross between nucleus adaptive theme and genesis focus mode made even more immersive!",
   "keywords": [
     "immersive",
     "dark",
     "adaptive",
-    "ui"
+    "ui",
+    "focus",
+    "genesis",
+    "nucleus"
   ],
-  "repository": "https://github.com/SkyFather/immersive-nucleus-dark-ui.git",
+  "main": "lib/settings",
+  "repository": "https://github.com/Positive07/geneus.git",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
