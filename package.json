@@ -13,7 +13,7 @@
     "nucleus"
   ],
   "main": "lib/settings",
-  "repository": "https://github.com/Positive07/geneus.git",
+  "repository": "https://github.com/Positive07/geneus-ui.git",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
